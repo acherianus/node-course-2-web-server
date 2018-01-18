@@ -61,6 +61,14 @@ app.get('/bad', (req,res) => {
   });
 });
 
+app.get('/projects', (req,res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    projects: {project1:"project1",project2:"project2"},
+    currentYear: new Date().getFullYear()
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server started at port ${port}`);
 });
